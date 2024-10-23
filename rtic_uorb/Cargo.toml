@@ -1,0 +1,11 @@
+[package]
+name = "rtic_uorb"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+defmt-rtt = "0.4.1"
+defmt = "0.3.8"
+panic-probe = { version = "0.3", features = ["print-defmt"] }
+cortex-m-rt = "0.7.1"
+cortex-m = { version = "0.7", features = ["critical-section-single-core"] }

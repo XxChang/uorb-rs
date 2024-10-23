@@ -5,11 +5,14 @@ edition = "2021"
 
 [dependencies]
 serde = { version = "1.0.210", default-features = false }
-uorb_macro_helper = { path = "uorb_macro_helper" }
+tokio = { version = "*", features = ["full"], optional = true }
 
 [features]
-default = ["std"]
-std = []
+# default = ["std"]
+std = ["dep:tokio"]
+
+[lib]
+harness = false
 
 # cargo test
 [profile.test]
@@ -21,4 +24,5 @@ opt-level = 3           # <-
 overflow-checks = true  # <-
 
 [workspace]
-members = [ "uorb_macro_helper" ]
+members = [ "rtic_uorb", "uorb_macro", "uorb_macro_helper" ]
+

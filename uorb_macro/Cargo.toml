@@ -1,0 +1,10 @@
+[package]
+name = "uorb_macro"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+uorb_macro_helper = { path = "../uorb_macro_helper" }
+
+[lib]
+proc-macro = true
